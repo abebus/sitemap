@@ -2,7 +2,7 @@ Run with `memray run basic.py`
 
 Print stats with `memray stats memray-basic.py.*.bin` - replace * with number that memray generated
 
-Running it about 7 minutes I got such results:
+Running it about 5 minutes produces such results:
 
 Base branch:
 ```
