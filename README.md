@@ -2,53 +2,54 @@ Run with `memray run basic.py`
 
 Print stats with `memray stats memray-basic.py.*.bin` - replace * with number that memray generated
 
-Running it about 7 minutes I got such results:
+Running it about 5 minutes produces such results:
 
-Base branch:
+`abebus/sitemap` branch:
+
 ```
 📏 Total allocations:
-        26993744
+        28776054
 
 📦 Total memory allocated:
-        12.825GB
+        13.387GB
 
 📈 Peak memory usage:
-        4.169GB
+        1.828GB
 
 📊 Histogram of allocation size:
         min: 1.000B
         -----------------------------------------------
-        < 5.000B   :  1615523 ▇▇▇
-        < 33.000B  :    22998 ▇
-        < 193.000B : 18765005 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
-        < 1.119kB  :  6492029 ▇▇▇▇▇▇▇▇▇
-        < 6.476kB  :    42873 ▇
-        < 37.462kB :    43551 ▇
-        < 216.701kB:     8852 ▇
-        < 1.254MB  :     2532 ▇
-        < 7.251MB  :      281 ▇
-        <=41.943MB :      100 ▇
+        < 5.000B   :  1594981 ▇▇▇
+        < 32.000B  :  3669758 ▇▇▇▇▇▇
+        < 181.000B : 17412734 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+        < 1.024kB  :  4278212 ▇▇▇▇▇▇▇
+        < 5.792kB  :  1656928 ▇▇▇
+        < 32.767kB :   116632 ▇
+        < 185.363kB:    44338 ▇
+        < 1.049MB  :      496 ▇
+        < 5.932MB  :     1860 ▇
+        <=33.554MB :      115 ▇
         -----------------------------------------------
-        max: 41.943MB
+        max: 33.554MB
 
 📂 Allocator type distribution:
-         MALLOC: 24468611
-         REALLOC: 2445195
-         CALLOC: 77549
-         MMAP: 2387
+         MALLOC: 26361471
+         REALLOC: 2334605
+         CALLOC: 77918
+         MMAP: 2058
          POSIX_MEMALIGN: 2
 
 🥇 Top 5 largest allocating locations (by size):
-        - quote_from_bytes:/home/anne/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/urllib/parse.py:965 -> 3.252GB
-        - __init__:/home/anne/sitemap/.venv/lib/python3.13/site-packages/scrapy/utils/sitemap.py:27 -> 1.764GB
-        - gunzip:/home/anne/sitemap/.venv/lib/python3.13/site-packages/scrapy/utils/gz.py:40 -> 1.720GB
-        - _parse_sitemap:/home/anne/sitemap/.venv/lib/python3.13/site-packages/scrapy/spiders/sitemap.py:97 -> 877.911MB
-        - should_follow:/home/anne/sitemap/.venv/lib/python3.13/site-packages/scrapy/downloadermiddlewares/offsite.py:65 -> 874.143MB
+        - quote_from_bytes:/home/anne/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/urllib/parse.py:965 -> 2.846GB
+        - __iter__:/home/anne/sitemap/.venv/lib/python3.13/site-packages/scrapy/utils/sitemap.py:40 -> 1.547GB
+        - gunzip:/home/anne/sitemap/.venv/lib/python3.13/site-packages/scrapy/utils/gz.py:41 -> 1.470GB
+        - should_follow:/home/anne/sitemap/.venv/lib/python3.13/site-packages/scrapy/downloadermiddlewares/offsite.py:65 -> 739.522MB
+        - __get_sitemap_requests:/home/anne/sitemap/.venv/lib/python3.13/site-packages/scrapy/spiders/sitemap.py:110 -> 733.299MB
 
 🥇 Top 5 largest allocating locations (by number of allocations):
-        - __init__:/home/anne/sitemap/.venv/lib/python3.13/site-packages/scrapy/utils/sitemap.py:27 -> 15550014
-        - quote_from_bytes:/home/anne/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/urllib/parse.py:965 -> 4789693
-        - should_follow:/home/anne/sitemap/.venv/lib/python3.13/site-packages/scrapy/downloadermiddlewares/offsite.py:65 -> 1596608
-        - fingerprint:/home/anne/sitemap/.venv/lib/python3.13/site-packages/scrapy/utils/request.py:97 -> 1596557
-        - fingerprint:/home/anne/sitemap/.venv/lib/python3.13/site-packages/scrapy/utils/request.py:99 -> 1596550
+        - __iter__:/home/anne/sitemap/.venv/lib/python3.13/site-packages/scrapy/utils/sitemap.py:40 -> 8026156
+        - __iter__:/home/anne/sitemap/.venv/lib/python3.13/site-packages/scrapy/utils/sitemap.py:49 -> 7923343
+        - quote_from_bytes:/home/anne/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/urllib/parse.py:965 -> 4049905
+        - _process_sitemap_element:/home/anne/sitemap/.venv/lib/python3.13/site-packages/scrapy/utils/sitemap.py:69 -> 1856247
+        - should_follow:/home/anne/sitemap/.venv/lib/python3.13/site-packages/scrapy/downloadermiddlewares/offsite.py:65 -> 1350726
 ```

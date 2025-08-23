@@ -4,5 +4,8 @@ version = "0.0.0"
 requires-python = ">=3.9"
 dependencies = [
     "memray>=1.18.0",
-    "scrapy>=2.13.3",
+    "scrapy",
 ]
+
+[tool.uv.sources]
+scrapy = { git = "https://github.com/abebus/scrapy.git", rev = "sitemap" }
