@@ -209,3 +209,5 @@ __marimo__/
 #uv stuff
 uv.lock
 .python-version
+
+*.bin
